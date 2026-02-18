@@ -30,6 +30,63 @@ log = logging.getLogger(__name__)
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp", ".heic", ".heif", ".tiff", ".tif"}
 
+ALL_TAGS = [
+    "landscape", "portrait", "street", "architecture", "macro", "wildlife", "aerial",
+    "concert", "night", "astro", "food", "sports", "travel", "fashion", "urban",
+    "person", "animal", "building", "nature", "water", "sky", "mountain", "beach",
+    "forest", "flower", "vehicle",
+    "monochrome", "silhouette", "long_exposure", "dramatic", "minimalist", "vintage",
+    "cinematic", "abstract", "bokeh",
+    "peaceful", "energetic", "intimate", "moody",
+    "fog", "rain", "snow", "storm",
+]
+
+ALL_CATEGORIES = [
+    "landscape", "portrait", "street", "architecture", "macro", "wildlife", "aerial",
+    "concert", "night", "astro", "food", "sports", "travel", "fashion", "urban",
+    "abstract", "minimalist", "dramatic", "monochrome", "weather", "default",
+]
+
+COMPOSITION_ELEMENTS = [
+    "rule_of_thirds", "leading_lines", "symmetry", "depth", "framing", "negative_space",
+]
+
+RESPONSE_SCHEMA = {
+    "type": "json_schema",
+    "json_schema": {
+        "name": "photo_analysis",
+        "strict": True,
+        "schema": {
+            "type": "object",
+            "required": ["tags", "composition", "category", "description", "location"],
+            "additionalProperties": False,
+            "properties": {
+                "tags": {
+                    "type": "array",
+                    "items": {"type": "string", "enum": ALL_TAGS},
+                    "maxItems": 8,
+                },
+                "composition": {
+                    "type": "object",
+                    "required": ["score", "elements", "explanation"],
+                    "additionalProperties": False,
+                    "properties": {
+                        "score": {"type": "integer", "minimum": 1, "maximum": 7},
+                        "elements": {
+                            "type": "array",
+                            "items": {"type": "string", "enum": COMPOSITION_ELEMENTS},
+                        },
+                        "explanation": {"type": "string"},
+                    },
+                },
+                "category": {"type": "string", "enum": ALL_CATEGORIES},
+                "description": {"type": "string"},
+                "location": {"type": ["string", "null"]},
+            },
+        },
+    },
+}
+
 ANALYSIS_PROMPT_BASE = """\
 Analyze this photograph and return a JSON object with exactly these keys:
 
@@ -218,7 +275,6 @@ def analyze_image(client: OpenAI, model: str, b64_data: str, gps: tuple[float, f
     # Strip markdown fences if the model wraps its response
     if raw.startswith("```"):
         lines = raw.split("\n")
-        # Remove first line (```json or ```) and last line (```)
         lines = lines[1:]
         if lines and lines[-1].strip() == "```":
             lines = lines[:-1]
@@ -249,8 +305,9 @@ def validate_analysis(data: dict) -> dict:
     if not isinstance(comp, dict):
         comp = {}
     score = comp.get("score", 0)
-    if not isinstance(score, (int, float)) or not (1 <= score <= 7):
+    if not isinstance(score, (int, float)):
         score = 0
+    score = max(0, min(7, score))  # clamp to 0-7
     elements = comp.get("elements", [])
     if not isinstance(elements, list):
         elements = []
