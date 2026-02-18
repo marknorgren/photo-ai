@@ -1,0 +1,47 @@
+{"type":"excalidraw","version":2,"appState":{"viewBackgroundColor":"#ffffff"},"elements":[
+  {"type":"text","id":"mt","x":220,"y":15,"width":260,"height":32,"text":"SF Photo Journey","fontSize":26,"fontFamily":1,"textAlign":"left","strokeColor":"#1e1e1e","roughness":1,"opacity":100,"angle":0,"seed":1},
+  {"type":"text","id":"ms","x":185,"y":48,"width":350,"height":20,"text":"66 unique locations across 9 neighborhoods","fontSize":16,"fontFamily":1,"textAlign":"left","strokeColor":"#757575","roughness":1,"opacity":100,"angle":0,"seed":2},
+
+  {"type":"ellipse","id":"gg","x":45,"y":95,"width":170,"height":70,"backgroundColor":"#b2f2bb","fillStyle":"solid","strokeColor":"#22c55e","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":3,"boundElements":[{"id":"gg_t","type":"text"}]},
+  {"type":"text","id":"gg_t","x":55,"y":105,"width":150,"height":50,"text":"Golden Gate\n12 photos","fontSize":14,"fontFamily":1,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1e1e1e","containerId":"gg","roughness":1,"opacity":100,"angle":0,"seed":4},
+
+  {"type":"arrow","id":"m1","x":215,"y":130,"width":100,"height":0,"points":[[0,0],[100,0]],"strokeColor":"#1e1e1e","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":5,"endArrowhead":"arrow","fillStyle":"solid","strokeStyle":"dashed"},
+
+  {"type":"ellipse","id":"fw","x":315,"y":85,"width":200,"height":70,"backgroundColor":"#a5d8ff","fillStyle":"solid","strokeColor":"#4a9eed","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":6,"boundElements":[{"id":"fw_t","type":"text"}]},
+  {"type":"text","id":"fw_t","x":325,"y":95,"width":180,"height":50,"text":"Fishermans Wharf\n12 photos","fontSize":14,"fontFamily":1,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1e1e1e","containerId":"fw","roughness":1,"opacity":100,"angle":0,"seed":7},
+
+  {"type":"arrow","id":"m2","x":515,"y":138,"width":60,"height":40,"points":[[0,0],[60,40]],"strokeColor":"#1e1e1e","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":8,"endArrowhead":"arrow","fillStyle":"solid","strokeStyle":"dashed"},
+
+  {"type":"ellipse","id":"nb","x":530,"y":175,"width":170,"height":70,"backgroundColor":"#d0bfff","fillStyle":"solid","strokeColor":"#8b5cf6","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":9,"boundElements":[{"id":"nb_t","type":"text"}]},
+  {"type":"text","id":"nb_t","x":540,"y":185,"width":150,"height":50,"text":"North Beach\n5 photos","fontSize":14,"fontFamily":1,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1e1e1e","containerId":"nb","roughness":1,"opacity":100,"angle":0,"seed":10},
+
+  {"type":"arrow","id":"m3","x":570,"y":245,"width":60,"height":35,"points":[[0,0],[-60,35]],"strokeColor":"#1e1e1e","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":11,"endArrowhead":"arrow","fillStyle":"solid","strokeStyle":"dashed"},
+
+  {"type":"ellipse","id":"ct","x":400,"y":275,"width":170,"height":70,"backgroundColor":"#ffd8a8","fillStyle":"solid","strokeColor":"#f59e0b","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":12,"boundElements":[{"id":"ct_t","type":"text"}]},
+  {"type":"text","id":"ct_t","x":410,"y":285,"width":150,"height":50,"text":"Chinatown\n9 photos","fontSize":14,"fontFamily":1,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1e1e1e","containerId":"ct","roughness":1,"opacity":100,"angle":0,"seed":13},
+
+  {"type":"arrow","id":"m4","x":420,"y":345,"width":50,"height":30,"points":[[0,0],[-50,30]],"strokeColor":"#1e1e1e","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":14,"endArrowhead":"arrow","fillStyle":"solid","strokeStyle":"dashed"},
+
+  {"type":"ellipse","id":"nh","x":260,"y":370,"width":160,"height":65,"backgroundColor":"#eebefa","fillStyle":"solid","strokeColor":"#8b5cf6","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":15,"boundElements":[{"id":"nh_t","type":"text"}]},
+  {"type":"text","id":"nh_t","x":270,"y":378,"width":140,"height":50,"text":"Nob Hill\n6 photos","fontSize":14,"fontFamily":1,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1e1e1e","containerId":"nh","roughness":1,"opacity":100,"angle":0,"seed":16},
+
+  {"type":"arrow","id":"m5","x":340,"y":435,"width":20,"height":30,"points":[[0,0],[20,30]],"strokeColor":"#1e1e1e","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":17,"endArrowhead":"arrow","fillStyle":"solid","strokeStyle":"dashed"},
+
+  {"type":"ellipse","id":"us","x":290,"y":462,"width":180,"height":65,"backgroundColor":"#fff3bf","fillStyle":"solid","strokeColor":"#f59e0b","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":18,"boundElements":[{"id":"us_t","type":"text"}]},
+  {"type":"text","id":"us_t","x":300,"y":470,"width":160,"height":50,"text":"Union Square\n6 photos","fontSize":14,"fontFamily":1,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1e1e1e","containerId":"us","roughness":1,"opacity":100,"angle":0,"seed":19},
+
+  {"type":"arrow","id":"m6","x":470,"y":485,"width":70,"height":40,"points":[[0,0],[70,-40]],"strokeColor":"#1e1e1e","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":20,"endArrowhead":"arrow","fillStyle":"solid","strokeStyle":"dashed"},
+
+  {"type":"ellipse","id":"fd","x":530,"y":395,"width":190,"height":65,"backgroundColor":"#c3fae8","fillStyle":"solid","strokeColor":"#22c55e","strokeWidth":2,"roughness":1,"opacity":100,"angle":0,"seed":21,"boundElements":[{"id":"fd_t","type":"text"}]},
+  {"type":"text","id":"fd_t","x":540,"y":403,"width":170,"height":50,"text":"Financial District\n4 photos","fontSize":14,"fontFamily":1,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1e1e1e","containerId":"fd","roughness":1,"opacity":100,"angle":0,"seed":22},
+
+  {"type":"arrow","id":"m7","x":130,"y":165,"width":20,"height":105,"points":[[0,0],[-20,105]],"strokeColor":"#1e1e1e","strokeWidth":1,"roughness":1,"opacity":100,"angle":0,"seed":23,"endArrowhead":"arrow","fillStyle":"solid","strokeStyle":"dashed"},
+
+  {"type":"ellipse","id":"sl","x":40,"y":265,"width":175,"height":65,"backgroundColor":"#ffc9c9","fillStyle":"solid","strokeColor":"#ef4444","strokeWidth":1,"roughness":1,"opacity":100,"angle":0,"seed":24,"boundElements":[{"id":"sl_t","type":"text"}]},
+  {"type":"text","id":"sl_t","x":50,"y":273,"width":155,"height":50,"text":"Sutro / Lands End\n2 photos","fontSize":14,"fontFamily":1,"textAlign":"center","verticalAlign":"middle","strokeColor":"#1e1e1e","containerId":"sl","roughness":1,"opacity":100,"angle":0,"seed":25},
+
+  {"type":"rectangle","id":"stats","x":50,"y":490,"width":200,"height":80,"backgroundColor":"#dbe4ff","fillStyle":"solid","roundness":{"type":3},"strokeColor":"#4a9eed","strokeWidth":1,"roughness":1,"opacity":50,"angle":0,"seed":26},
+  {"type":"text","id":"st1","x":68,"y":498,"width":170,"height":20,"text":"100% GPS coverage","fontSize":16,"fontFamily":1,"textAlign":"left","strokeColor":"#1e1e1e","roughness":1,"opacity":100,"angle":0,"seed":27},
+  {"type":"text","id":"st2","x":68,"y":520,"width":170,"height":20,"text":"510 tags assigned","fontSize":16,"fontFamily":1,"textAlign":"left","strokeColor":"#1e1e1e","roughness":1,"opacity":100,"angle":0,"seed":28},
+  {"type":"text","id":"st3","x":68,"y":542,"width":170,"height":18,"text":"All 85 photos located","fontSize":14,"fontFamily":1,"textAlign":"left","strokeColor":"#757575","roughness":1,"opacity":100,"angle":0,"seed":29}
+]}
