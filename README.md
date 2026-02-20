@@ -1,5 +1,9 @@
 # photo-ai
 
+![ALPHA](https://img.shields.io/badge/status-ALPHA-ff6b35?style=for-the-badge) ![vibe coded](https://img.shields.io/badge/vibe-coded-blueviolet?style=for-the-badge) ![AI paired](https://img.shields.io/badge/AI%20%2B%20human-paired-22c55e?style=for-the-badge)
+
+> **Alpha.** Mostly AI-generated, human-paired, and evolving fast. Expect rough edges.
+
 Batch-analyze photos with a local vision LLM. One script, one API call per
 image, structured results in SQLite.
 
