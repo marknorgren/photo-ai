@@ -1,0 +1,179 @@
+{
+  "version": "1.0",
+  "created": "2026-02-18",
+  "reviewer": "claude-opus-4-6",
+  "description": "Golden evaluation dataset for photo composition scoring. Human-calibrated scores on a 1-7 scale to benchmark vision model accuracy.",
+  "scale": {
+    "7": "Perfect — museum-quality, exceptional in every way",
+    "6": "Excellent — strong composition worth studying, minor imperfections",
+    "5": "Good — solid composition, nothing distracting",
+    "4": "Passable — acceptable but unremarkable, some compositional issues",
+    "3": "Bad — noticeable problems (clutter, poor framing, no clear subject)",
+    "2": "Atrocious — major compositional failures",
+    "1": "Terrible — no compositional merit"
+  },
+  "known_biases": [
+    "Qwen3-VL-30B compresses all scores into 5.0-6.0 range (should be 1-7)",
+    "Famous landmarks (Golden Gate Bridge) inflate scores regardless of composition",
+    "Rotated/sideways orientation not penalized",
+    "Food snapshots overscored — casual photos rated same as intentional compositions",
+    "Model says 'be critical, most photos should score 3-5' but ignores this guidance"
+  ],
+  "photos": [
+    {
+      "filename": "IMG_9187.HEIC",
+      "model_score": 6.0,
+      "human_score": 5,
+      "category": "architecture",
+      "subject": "Fire escape in narrow alleyway, monochrome",
+      "human_notes": "Good geometric pattern and leading lines from the zigzag fire escape. Monochrome palette is cohesive. But flat lighting and limited tonal range keep it from being exceptional. Competent, not outstanding.",
+      "score_delta": -1,
+      "model_issues": []
+    },
+    {
+      "filename": "IMG_9192.HEIC",
+      "model_score": 6.0,
+      "human_score": 6,
+      "category": "architecture",
+      "subject": "Apple Store logo with sky reflection",
+      "human_notes": "Creative use of the Apple cutout as a natural frame revealing reflected sky and signage. Strong concept, good execution with tree branch framing in corner. Intentional and worth studying.",
+      "score_delta": 0,
+      "model_issues": []
+    },
+    {
+      "filename": "IMG_9304.HEIC",
+      "model_score": 6.0,
+      "human_score": 4,
+      "category": "landscape",
+      "subject": "Golden Gate Bridge from Crissy Field beach",
+      "human_notes": "Standard tourist vantage point. Dead, flat foreground of featureless sand takes up bottom third. No interesting light, framing, or foreground elements. The bridge is iconic but the composition adds nothing to it.",
+      "score_delta": -2,
+      "model_issues": ["landmark_bias", "boring_foreground_ignored"]
+    },
+    {
+      "filename": "IMG_9002.HEIC",
+      "model_score": 6.0,
+      "human_score": 3,
+      "category": "food",
+      "subject": "Chowder bread bowl with beer",
+      "human_notes": "Rotated sideways. Cluttered, dark background. No intentional composition — this is a quick snap before eating. The model praised 'rule of thirds placement' which is nonsensical for a rotated casual food photo.",
+      "score_delta": -3,
+      "model_issues": ["rotation_not_penalized", "food_overscored", "hallucinated_composition_elements"]
+    },
+    {
+      "filename": "IMG_9043.HEIC",
+      "model_score": 6.0,
+      "human_score": 5,
+      "category": "street",
+      "subject": "Chinatown tunnel mural with road markings",
+      "human_notes": "Decent leading lines from the double yellow road markings. The red Chinatown sign is a bold graphic element. Moody nighttime atmosphere. But ultimately the subject is just a sign — solid but not exceptional.",
+      "score_delta": -1,
+      "model_issues": []
+    },
+    {
+      "filename": "IMG_9059.HEIC",
+      "model_score": 6.0,
+      "human_score": 5,
+      "category": "architecture",
+      "subject": "Ornate hotel lobby interior (Palace Hotel or similar)",
+      "human_notes": "Beautiful space with grand symmetry and ornate details. But the image is rotated sideways, which undermines the symmetry the model praised. Feels like documentation rather than intentional composition.",
+      "score_delta": -1,
+      "model_issues": ["rotation_not_penalized"]
+    },
+    {
+      "filename": "IMG_9353.HEIC",
+      "model_score": 6.0,
+      "human_score": 5,
+      "category": "architecture",
+      "subject": "Golden Gate Bridge tower looking up with cables",
+      "human_notes": "Strong diagonal lines from the suspension cables create good visual tension. Nice detail on the tower. But rotated sideways and a very common angle — well-executed version of a standard shot.",
+      "score_delta": -1,
+      "model_issues": ["rotation_not_penalized", "landmark_bias"]
+    },
+    {
+      "filename": "IMG_9402.HEIC",
+      "model_score": 6.0,
+      "human_score": 3,
+      "category": "food",
+      "subject": "Breakfast burrito with coffee and hot sauce",
+      "human_notes": "Casual breakfast photo with nice morning side-light, but that's incidental not composed. Shallow depth of field on a burrito does not constitute 'excellent composition'. The model described it as 'cinematic' which is generous.",
+      "score_delta": -3,
+      "model_issues": ["food_overscored", "hallucinated_composition_elements"]
+    },
+    {
+      "filename": "IMG_9222.HEIC",
+      "model_score": 5.0,
+      "human_score": 3,
+      "category": "event",
+      "subject": "Panel discussion at tech event",
+      "human_notes": "Event documentation shot, rotated sideways. Audience heads in foreground, stage in background. No compositional intent — taken to record the moment, not as photography.",
+      "score_delta": -2,
+      "model_issues": ["rotation_not_penalized", "documentation_shots_overscored"]
+    },
+    {
+      "filename": "IMG_8981.HEIC",
+      "model_score": 5.0,
+      "human_score": 4,
+      "category": "food",
+      "subject": "Boudin Bakery bread display at Fisherman's Wharf",
+      "human_notes": "Actually has nice visual layering — hanging signs create depth, bread textures are appealing, window shows street scene behind. Better composed than several photos rated 6.0. Slightly underscored relative to the set.",
+      "score_delta": -1,
+      "model_issues": ["inconsistent_relative_scoring"]
+    },
+    {
+      "filename": "IMG_9009.HEIC",
+      "model_score": 5.0,
+      "human_score": 4,
+      "category": "architecture",
+      "subject": "Musée Mécanique vintage arcade museum interior",
+      "human_notes": "Good sense of place with the colorful machines and industrial ceiling creating depth. Captures the atmosphere well. Acceptable composition for a wide interior shot. Fair score.",
+      "score_delta": -1,
+      "model_issues": []
+    },
+    {
+      "filename": "IMG_9019.HEIC",
+      "model_score": 5.0,
+      "human_score": 3,
+      "category": "street",
+      "subject": "Tourist hoodie shop storefront on rainy day",
+      "human_notes": "Rotated sideways. Tourist trap documentation — the sign is the subject but it's not photographically interesting. Wet pavement adds minor atmosphere but this is a snapshot.",
+      "score_delta": -2,
+      "model_issues": ["rotation_not_penalized"]
+    },
+    {
+      "filename": "IMG_9114.HEIC",
+      "model_score": 5.0,
+      "human_score": 5,
+      "category": "urban",
+      "subject": "Rainbow LOVE sculpture at night",
+      "human_notes": "Well-framed with clean background, colors pop against the concrete wall and dark sky. Green hedge provides grounding element. Intentional composition with the sculpture well-positioned. Fair score.",
+      "score_delta": 0,
+      "model_issues": []
+    },
+    {
+      "filename": "IMG_8850.HEIC",
+      "model_score": 4.0,
+      "human_score": 2,
+      "category": "street",
+      "subject": "Cluttered Chinatown souvenir shop",
+      "human_notes": "Rotated sideways. Completely chaotic frame with no focal point, no subject separation, no compositional structure. Visual noise everywhere. This is exactly the kind of photo that should score low on a composition scale.",
+      "score_delta": -2,
+      "model_issues": ["rotation_not_penalized", "still_overscored_for_chaos"]
+    }
+  ],
+  "summary": {
+    "total_photos_reviewed": 14,
+    "model_score_range": {"min": 4.0, "max": 6.0},
+    "human_score_range": {"min": 2, "max": 6},
+    "mean_model_score": 5.5,
+    "mean_human_score": 3.93,
+    "mean_absolute_delta": 1.43,
+    "model_overscored_count": 12,
+    "model_matched_count": 2,
+    "model_underscored_count": 0,
+    "worst_disagreements": [
+      {"filename": "IMG_9002.HEIC", "delta": -3, "reason": "Rotated food snapshot rated as excellent composition"},
+      {"filename": "IMG_9402.HEIC", "delta": -3, "reason": "Casual breakfast photo rated as excellent composition"}
+    ]
+  }
+}

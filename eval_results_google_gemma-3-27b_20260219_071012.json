@@ -1,0 +1,102 @@
+{
+  "model": "google/gemma-3-27b",
+  "eval_file": "golden_eval.json",
+  "timestamp": "2026-02-19T07:10:12",
+  "stats": {
+    "n": 14,
+    "mean_human": 4.07,
+    "mean_model": 4.71,
+    "bias": 0.64,
+    "mae": 0.79,
+    "pearson_r": 0.759,
+    "overscored": 9,
+    "matched": 4,
+    "underscored": 1
+  },
+  "results": [
+    {
+      "filename": "IMG_9187.HEIC",
+      "human": 5,
+      "model": 5.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_9192.HEIC",
+      "human": 6,
+      "model": 6.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_9304.HEIC",
+      "human": 4,
+      "model": 5.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_9002.HEIC",
+      "human": 3,
+      "model": 5.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_9043.HEIC",
+      "human": 5,
+      "model": 4.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_9059.HEIC",
+      "human": 5,
+      "model": 6.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_9353.HEIC",
+      "human": 5,
+      "model": 6.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_9402.HEIC",
+      "human": 3,
+      "model": 4.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_9222.HEIC",
+      "human": 3,
+      "model": 4.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_8981.HEIC",
+      "human": 4,
+      "model": 5.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_9009.HEIC",
+      "human": 4,
+      "model": 4.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_9019.HEIC",
+      "human": 3,
+      "model": 4.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_9114.HEIC",
+      "human": 5,
+      "model": 5.0,
+      "error": null
+    },
+    {
+      "filename": "IMG_8850.HEIC",
+      "human": 2,
+      "model": 3.0,
+      "error": null
+    }
+  ]
+}
