@@ -1,21 +1,25 @@
 # Security Policy
 
-## Supported Versions
+## Status
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+This is an **alpha** personal/research tool. It is not versioned with a formal release cadence.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+## Scope
+
+`photo-ai` is a local CLI tool. It:
+
+- Makes API calls to local (LM Studio) or cloud (OpenAI, Anthropic) vision models
+- Reads image files from your local filesystem
+- Writes results to a local SQLite database
+- Does not run a server, expose a network port, or handle user-supplied input from untrusted sources
+
+The primary attack surface is credential handling — API keys passed via environment variables.
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+If you find a security issue, please open a [GitHub issue](../../issues) or contact the maintainer directly via GitHub. Given the alpha state of this project, there is no formal SLA, but reports will be acknowledged promptly.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+## Credentials
+
+- **Never commit API keys.** Use environment variables: `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`.
+- The `.gitignore` excludes `*.db` files to prevent local analysis data from being committed.
