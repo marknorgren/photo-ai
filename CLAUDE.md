@@ -101,6 +101,12 @@ OpenAI models are available for cross-validation or GPU-less environments:
 
 All models agree within ±1 point on 98–100% of photos. OpenAI models score ~0.5 points more conservatively and use fewer category labels.
 
+## Testing
+
+```
+uv run --with pytest --with Pillow --with tqdm --with openai pytest tests/ -v
+```
+
 ## Dependencies
 
 PEP 723 inline metadata in `analyze.py`: `openai`, `anthropic`, `Pillow`, `pillow-heif`, `tqdm`. Query subcommands use stdlib only (`argparse`, `sqlite3`, `csv`, `json`, `textwrap`, `subprocess`). The `publish --gist` flag requires the `gh` CLI.

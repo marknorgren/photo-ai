@@ -16,6 +16,9 @@ PROVIDERS = {
 
 DEFAULT_PROVIDER = "lmstudio"
 
+# Reasoning models don't support temperature and need higher token budgets
+_REASONING_MODELS = {"gpt-5", "gpt-5-pro", "o1", "o1-pro", "o3", "o3-mini", "o3-pro"}
+
 
 def _strip_markdown_fences(raw: str) -> str:
     """Strip markdown code fences from model response."""
@@ -60,8 +63,15 @@ def _make_openai(model: str):
         print("Error: OPENAI_API_KEY environment variable not set", file=sys.stderr)
         sys.exit(1)
     client = OpenAI(api_key=api_key)
+    is_reasoning = model in _REASONING_MODELS
 
     def analyze(b64_data: str, prompt: str) -> dict:
+        kwargs = {}
+        if is_reasoning:
+            kwargs["max_completion_tokens"] = 8192
+        else:
+            kwargs["max_tokens"] = 1500
+            kwargs["temperature"] = 0.3
         response = client.chat.completions.create(
             model=model,
             messages=[{
@@ -71,7 +81,7 @@ def _make_openai(model: str):
                     {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{b64_data}"}},
                 ],
             }],
-            max_completion_tokens=8192,
+            **kwargs,
         )
         raw = _strip_markdown_fences(response.choices[0].message.content)
         return json.loads(raw)
