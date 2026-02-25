@@ -55,14 +55,23 @@ async function main() {
 
   for (const file of files) {
     const name = path.basename(file, '.excalidraw');
-    const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const content = fs.readFileSync(file, 'utf8');
     process.stdout.write(`  ${name}.excalidraw → ${name}.svg ... `);
 
+    const outPath = path.join(DIAGRAMS_DIR, `${name}.svg`);
+
+    // If the file already contains SVG content, write it directly
+    if (content.trimStart().startsWith('<')) {
+      fs.writeFileSync(outPath, content);
+      console.log('done');
+      continue;
+    }
+
+    const data = JSON.parse(content);
     const svg = await page.evaluate(async (diagram) => {
       return await window.__exportDiagram(diagram);
     }, data);
 
-    const outPath = path.join(DIAGRAMS_DIR, `${name}.svg`);
     fs.writeFileSync(outPath, svg);
     console.log('done');
   }
